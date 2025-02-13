@@ -8,37 +8,16 @@
  * Cantidad de hombres: 5
  * Cantidad de mujeres: 7
  */
-import Cl_persona from "./Cl_persona.js";
-import Cl_grupo from "./Cl_grupo.js";
 
-let persona1 = new Cl_persona("Luisa", "F");
-let persona2 = new Cl_persona("Ana", "F");
-let persona3 = new Cl_persona("José", "M");
-let persona4 = new Cl_persona("Carmen", "F");
-let persona5 = new Cl_persona("Rosa", "F");
-let persona6 = new Cl_persona("José", "M");
-let persona7 = new Cl_persona("Maria", "F");
-let persona8 = new Cl_persona("Luz", "F");
-let persona9 = new Cl_persona("Rafael", "M");
-let persona10 = new Cl_persona("Liz", "F");
-let persona11 = new Cl_persona("Marcos", "M");
-let persona12 = new Cl_persona("Leo", "M");
+import Cl_vGrupo from "./Cl_vGrupo.js";
+import Cl_mGrupo from "./Cl_mGrupo.js";
+import Cl_controlador from "./Cl_controlador.js";
 
-let grupo = new Cl_grupo();
-
-grupo.procesarPersona(persona1);
-grupo.procesarPersona(persona2);
-grupo.procesarPersona(persona3);
-grupo.procesarPersona(persona4);
-grupo.procesarPersona(persona5);
-grupo.procesarPersona(persona6);
-grupo.procesarPersona(persona7);
-grupo.procesarPersona(persona8);
-grupo.procesarPersona(persona9);
-grupo.procesarPersona(persona10);
-grupo.procesarPersona(persona11);
-grupo.procesarPersona(persona12);
-
-alert(`Cantidad de personas: ${grupo.cantidadPersonas()}`);
-alert(`Cantidad de hombres: ${grupo.cantidadHombres()}`);
-alert(`Cantidad de mujeres: ${grupo.cantidadMujeres()}`);
+export default class Cl_principal {
+  constructor() {
+    let vista = new Cl_vGrupo();
+    let modelo = new Cl_mGrupo();
+    let controlador = new Cl_controlador(modelo, vista);
+    vista.controlador = controlador;
+  }
+}

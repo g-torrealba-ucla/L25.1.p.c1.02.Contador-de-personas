@@ -1,4 +1,4 @@
-export default class Cl_grupo {
+export default class Cl_mGrupo {
   constructor() {
     this.cnHombres = 0;
     this.cnMujeres = 0;
